@@ -1,0 +1,17 @@
+experiment_name: "pro_3"
+task_type: "text_classification"
+output_type: "per_sequence"
+multilabel: true
+metric: "binary_classification_metrics"
+output_dir: "tasks/pro/models"
+log_dir: "tasks/pro/logs"
+data:
+  data_dir: "tasks/pro/data"
+  train_filename: "PRO_GROUPS_3_DIGITS_adm_train.csv"
+  dev_filename: "PRO_GROUPS_3_DIGITS_adm_val.csv"
+  test_filename: "PRO_GROUPS_3_DIGITS_adm_test.csv"
+  label_list: "ALL_3_DIGIT_PRO_CODES.txt"
+  parsing:
+    label_column: "short_codes"
+    delimiter: ","
+    quote_char: "\""

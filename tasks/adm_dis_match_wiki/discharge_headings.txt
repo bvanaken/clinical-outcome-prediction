@@ -1,0 +1,15 @@
+disease.prognosis
+disease.treatment
+disease.classification
+disease.medication
+disease.infection
+disease.complication
+disease.mechanism
+disease.diagnosis
+disease.pathology
+disease.tomography
+disease.management
+disease.surgery
+disease.risk
+disease.screening
+disease.pathophysiology

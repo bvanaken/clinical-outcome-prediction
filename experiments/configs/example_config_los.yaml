@@ -1,0 +1,21 @@
+experiment_name: "los"
+task_type: "text_classification"
+output_type: "per_sequence"
+multilabel: false
+metric: "multiclass_classification_metrics"
+output_dir: "tasks/los/models"
+log_dir: "tasks/los/logs"
+data:
+  data_dir: "tasks/los/data"
+  train_filename: "LOS_WEEKS_adm_train.csv"
+  dev_filename: "LOS_WEEKS_adm_val.csv"
+  test_filename: "LOS_WEEKS_adm_test.csv"
+  label_list:
+    - "0"
+    - "1"
+    - "2"
+    - "3"
+  parsing:
+    label_column: "los_label"
+    delimiter: ","
+    quote_char: "\""

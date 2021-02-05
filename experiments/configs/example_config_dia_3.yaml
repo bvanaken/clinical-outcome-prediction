@@ -1,0 +1,17 @@
+experiment_name: "dia_3"
+task_type: "text_classification"
+output_type: "per_sequence"
+multilabel: true
+metric: "binary_classification_metrics"
+output_dir: "tasks/dia/models"
+log_dir: "tasks/dia/logs"
+data:
+  data_dir: "tasks/dia/data"
+  train_filename: "DIA_GROUPS_3_DIGITS_adm_train.csv"
+  dev_filename: "DIA_GROUPS_3_DIGITS_adm_val.csv"
+  test_filename: "DIA_GROUPS_3_DIGITS_adm_test.csv"
+  label_list: "ALL_3_DIGIT_DIA_CODES.txt"
+  parsing:
+    label_column: "short_codes"
+    delimiter: ","
+    quote_char: "\""

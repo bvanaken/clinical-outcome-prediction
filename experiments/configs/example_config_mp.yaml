@@ -1,0 +1,19 @@
+experiment_name: "mp"
+task_type: "text_classification"
+output_type: "per_sequence"
+multilabel: false
+metric: "binary_classification_metrics"
+output_dir: "models"
+log_dir: "logs"
+data:
+  data_dir: "."
+  train_filename: "MP_IN_adm_train.csv"
+  dev_filename: "MP_IN_adm_val.csv"
+  test_filename: "MP_IN_adm_test.csv"
+  label_list:
+    - "0"
+    - "1"
+  parsing:
+    label_column: "hospital_expire_flag"
+    delimiter: ","
+    quote_char: "\""

@@ -1,0 +1,201 @@
+old_heading,new_heading
+hx,history
+soc hx,social history
+fhx,family history
+meds,medications
+pmh,past medical history
+ros,review of systems
+hpi,history of present illness
+pe,physical examination
+mr,medical record number
+mrn,medical record number
+problem,problems
+pmhx,past medical history
+sh,social history
+fh,family history
+history of the present illness,history of present illness
+labs,lab data
+assessment plan,assessment and plan
+medication,medications
+pcp,primary care physician
+selected recent labs,lab data
+imp ,impression
+exam,physical examination
+current meds,current medications
+review of systemshand,review of systems
+physical exam,physical examination
+family historymother,family history
+social historyplace,social history
+allergiesnone,allergies
+risk factors and habitstobacco,risk factors and habits
+medical historycoronary,past medical history
+reason for visitdyspnea,reason for visit
+medication list,medications
+a p,assessment and plan
+vs,vital signs
+pt,patient name
+patient,patient name
+name,patient name
+examination,physical examination
+and allergies,allergies
+allergy,allergies
+pmhx,past medical history
+pshx,social history
+assessment amp plan,assessment and plan
+assesment and plan,assessment and plan
+shx,social history
+psh,social history
+family hx,family history
+laboratory data,lab data
+history of presenting complaint,history of present illness
+date,date of visit
+admit date,date of admission
+social hx,social history
+code,code status
+visit date,date of visit
+active medications,current medications
+presenting complaint,chief complaint
+medical history,past medical history
+assessment  amp  plan,assessment and plan
+impression plan,impression and plan
+vitals,vital signs
+pmhx pshx,past medical history and social history
+admission date,date of admission
+assessment   plan,assessment and plan
+med,medications
+medications on admission  confirmed with patient,medications on admission
+imp plan,impression and plan
+assessment  plan,assessment and plan
+meds now,current medications
+meds on admission,medications on admission
+history of present illness pt,history of present illness
+medications  on transfer,transfer medications
+medications  current,current medications
+meds on admit,medications on admission
+medications  home,medications at home
+home meds,medications at home
+pmh   psh,social history
+medical hx,past medical history
+history of present illness   y,history of present illness
+history of present problemthe,history of present illness
+history of present illness was,history of present illness
+history of present illness  obtained on admission,history of present illness
+impression and plans,impression and plan
+impressions and plans,impression and plan
+medications at present,current medications
+medications at home  confirmed with family,medications at home
+medications on admission  source of information,medications on admission
+medications on admission  from alf,medications on admission
+medications upon admission,medications on admission
+meds  at home,medications at home
+meds  in house,medications at home
+meds at home,medications at home
+meds  on admission,medications on admission
+meds currently,current medications
+chief complaint of,chief complaint
+current inpatient medications,current medications
+brief history,history
+current medication list,current medications
+dov,date of visit
+er course,emergency room course
+famiy history,family history
+pt name,patient name
+phys exam,physical examination
+selected recent labs chem,lab data
+assessment and medical decision making,assessment and plan
+famhx,family history
+patient s name,patient name
+past medical,past medical history
+past history,past medical history
+most recent labs  since admission,lab data
+sochx,social history
+social,social history
+history of presenting illness,history of present illness
+lab,lab data
+fam hx,family history
+medical problems,problems
+admission medications,medications on admission
+medications on transfer,transfer medications
+i p,impression and plan
+home medications,medications at home
+imp,impression
+pmh psh,past medical history and social history
+data,lab data
+ed course,emergency department course
+laboratories,lab data
+labs studies,lab data
+recommendation,recommendations
+procedure,procedures
+laboratory studies,lab data
+dv,date of visit
+labs and studies,lab data
+hcp,history of present illness
+fh sh,social history and family history
+lab results,lab data
+assessment recommendations,assessment and recommendations
+psurhx,past surgical history
+p,plan
+ass,assessment
+history obtained from,source of history
+family and social history,social history and family history
+chief complaint   present illness,chief complaint and history of present illness
+cc  hpi,chief complaint and history of present illness
+medical decision making ed course,emergency department course
+data  laboratory and radiographs,lab data
+pmh psh   other,past medical history and social history
+presenting complaint and history of presenting complaint,chief complaint and history of present illness
+meds on transfer,transfer medications
+problem list,problems
+review of system,review of systems
+surgical history,past surgical history
+emergency room course,emergency department course
+source of hx,source of history
+history of present illness ms,history of present illness
+previous culture data,social history
+plans,plan
+relevant labs,lab data
+psurghx,past surgical history
+family   social history,social history and family history
+fmh sh,social history and family history
+family social history,social history and family history
+chief complaint   history of present illness,chief complaint and history of present illness
+date this visit,date of visit
+course in ed,emergency department course
+past medical hx,past medical history
+meds include,medications
+medical surgical history,past surgical history
+medications  upon admission,medications on admission
+lab test,lab data
+lab values from today,lab data
+laboratory values,lab data
+laboratory exam,lab data
+staff notes,staff note
+preceptor s note,perceptor note
+obs attending note,attending note
+attending md notes,attending note
+admission note   attending pcp,admission note
+admit note,admission note
+principal diagnosis,primary diagnosis
+id cc,chief complaint
+id,chief complaint
+cc id,chief complaint
+diagnoses,diagnosis
+social and family history,social history and family history
+cc hpi,chief complaint and history of present illness
+other past medical surgical history,past surgical history
+current medical problems include,problems
+current issues,problems
+mrn  hh,medical record number
+major diagnosis,diagnosis
+past medical surgical history,past surgical history
+impr,impression
+impressions and plan,impression and plan
+impressions,impression
+clinical impression,impression
+initial impression and plan,impression and plan
+initial impression and plan,impression and plan
+overall impression,impression
+impression plan by issue,impression and plan
+impression by problem,impression
+all,allergies
+alls,allergies
