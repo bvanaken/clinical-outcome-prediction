@@ -15,11 +15,11 @@ Create train/val/test for tasks:
 
 #### Length-of-Stay (LOS):
 
-`python tasks/los/los_weeks.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+`python tasks/los/los.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
 #### Diagnoses 3-digits (DIA_3_DIGITS):
 
-`python tasks/dia/dia_groups_3_digits.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+`python tasks/dia/dia.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
 #### Diagnoses + ICD Hierarchy (DIA_PLUS):
 
@@ -27,7 +27,7 @@ Create train/val/test for tasks:
 
 #### Procedures 3-digits (PRO_3_DIGITS):
 
-`python tasks/pro/pro_groups_3_digits.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+`python tasks/pro/pro.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
 #### Procedures + ICD Hierarchy (PRO_PLUS):
 
@@ -50,7 +50,7 @@ python doc_classification.py \
  --model_name {PATH_TO_MODEL_OR_TRANSFORMERS_MODEL_HUB_NAME} \   # required
  --cache_dir {CACHE_DIR} \   # required
 ```
-TODO: List all optional parameters.
+See [doc_classification.py](https://github.com/bvanaken/clinical-outcome-prediction/blob/master/experiments/doc_classification.py) for optional parameters.
 
 (4) - Run Training with Hyperparameter Optimization
 ```
