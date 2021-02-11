@@ -1,4 +1,7 @@
-# Clinical Outcome Prediction
+# Clinical Outcome Prediction from Admission Notes
+
+This repository contains source code for the task creation and experiments from our paper [Clinical Outcome Prediction from Admission Notes using Self-Supervised Knowledge Integration](https://arxiv.org/abs/2102.04110), to appear at EACL 2021.
+
 
 ## Create data for tasks
 
