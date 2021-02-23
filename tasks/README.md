@@ -1,18 +1,34 @@
 # Tasks
 
-## Prepare Outcome Classification Data
+Create train/val/test for tasks:
 
-Create train/val/test for **Mortality Prediction** (mp):
+#### Mortality Prediction (MP):
 
 `python tasks/mp/mp.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
-mimic_dir: _Directory that contains NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES.csv_
+#### Length-of-Stay (LOS):
 
-save_dir: _Any directory to save the data_
+`python tasks/los/los.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
-admission_only: _Filter parts of Discharge Summary that are not known at Admission_
+#### Diagnoses 3-digits (DIA_3_DIGITS):
 
-Apply the same for Length-of-Stay (los/los_weeks.py), Diagnoses 3-digit (dia/dia_groups_3_digits.py), Diagnoses + ICD Hierarchy (dia/dia_plus.py), Procedures 3-digit (pro/pro_groups_3_digits.py) and Procedures + ICD Hierarchy (pro/pro_plus.py) Prediction Tasks.
+`python tasks/dia/dia.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+
+#### Diagnoses + ICD Hierarchy (DIA_PLUS):
+
+`python tasks/dia/dia_plus.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+
+#### Procedures 3-digits (PRO_3_DIGITS):
+
+`python tasks/pro/pro.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+
+#### Procedures + ICD Hierarchy (PRO_PLUS):
+
+`python tasks/pro/pro_plus.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+
+admission_only: Filter parts of Discharge Summary that are not known at Admission
+
+mimic_dir: Must contain unpacked MIMIC files `ADMISSIONS.csv`, `NOTEEVENTS.csv`, `DIAGNOSES_ICD.csv`, `D_ICD_DIAGNOSES.csv`
 
 ## Prepare Outcome Pretraining Data
 

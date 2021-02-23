@@ -3,42 +3,23 @@
 This repository contains source code for the task creation and experiments from our paper [Clinical Outcome Prediction from Admission Notes using Self-Supervised Knowledge Integration](https://arxiv.org/abs/2102.04110), to appear at EACL 2021.
 
 
-## Create data for tasks
+## Create Admission Notes for Outcome Prediction from MIMIC-III
 
 Install Requirements:
 
 `pip install -r tasks/requirements.txt`
 
-
-Create train/val/test for tasks:
-
-#### Mortality Prediction (MP):
+Create train/val/test for **Mortality Prediction**:
 
 `python tasks/mp/mp.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
 
-#### Length-of-Stay (LOS):
+mimic_dir: _Directory that contains unpacked NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES.csv_
 
-`python tasks/los/los.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+save_dir: _Any directory to save the data_
 
-#### Diagnoses 3-digits (DIA_3_DIGITS):
+admission_only: _True=Create simulated Admission Notes, False=Keep complete Discharge Summaries_
 
-`python tasks/dia/dia.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
-
-#### Diagnoses + ICD Hierarchy (DIA_PLUS):
-
-`python tasks/dia/dia_plus.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
-
-#### Procedures 3-digits (PRO_3_DIGITS):
-
-`python tasks/pro/pro.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
-
-#### Procedures + ICD Hierarchy (PRO_PLUS):
-
-`python tasks/dia/pro_plus.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
-
-admission_only: Filter parts of Discharge Summary that are not known at Admission
-
-mimic_dir: Must contain unpacked MIMIC files `ADMISSIONS.csv`, `NOTEEVENTS.csv`, `DIAGNOSES_ICD.csv`, `D_ICD_DIAGNOSES.csv`
+Apply these scripts accordingly for Length-of-Stay (los/los.py), Diagnoses (dia/dia.py), Diagnoses + ICD+ (dia/dia_plus.py), Procedures (pro/pro.py) and Procedures + ICD+ (pro/pro_plus.py) prediction Tasks.
 
 ## Train Outcome Prediction Tasks
 
