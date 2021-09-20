@@ -46,7 +46,11 @@ def mp_in_hospital_mimic(mimic_dir: str, save_dir: str, seed: int, admission_onl
 
 def remove_mentions_of_patients_death(df: pd.DataFrame):
     """
-    Some notes contain mentions of the patient's death such as 'patient deceased'. If these occur in the sections PHYSICAL EXAM and MEDICATION ON ADMISSION, we can simply remove the mentions, because the conditions are not further elaborated in these sections. However, if the mentions occur in any other section, such as CHIEF COMPLAINT, we want to remove the whole sample, because the patient's passing if usually closer described in the text and an outcome prediction does not make sense in these cases.
+    Some notes contain mentions of the patient's death such as 'patient deceased'. If these occur in the sections
+    PHYSICAL EXAM and MEDICATION ON ADMISSION, we can simply remove the mentions, because the conditions are not
+    further elaborated in these sections. However, if the mentions occur in any other section, such as CHIEF COMPLAINT,
+    we want to remove the whole sample, because the patient's passing if usually closer described in the text and an
+    outcome prediction does not make sense in these cases.
     """
 
     death_indication_in_special_sections = re.compile(
