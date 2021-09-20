@@ -1,6 +1,6 @@
 # Clinical Outcome Prediction from Admission Notes
 
-This repository contains source code for the task creation and experiments from our paper [Clinical Outcome Prediction from Admission Notes using Self-Supervised Knowledge Integration](https://arxiv.org/abs/2102.04110), to appear at EACL 2021.
+This repository contains source code for the task creation and experiments from our paper [Clinical Outcome Prediction from Admission Notes using Self-Supervised Knowledge Integration](https://www.aclweb.org/anthology/2021.eacl-main.75/), EACL 2021.
 
 
 ## Use the CORe Model
@@ -20,15 +20,30 @@ Install Requirements:
 
 Create train/val/test for e.g. **Mortality Prediction**:
 
-`python tasks/mp/mp.py --mimic_dir {MIMIC_DIR} --save_dir {DIR_TO_SAVE_DATA} --admission_only True`
+```
+python tasks/mp/mp.py \
+ --mimic_dir {MIMIC_DIR} \   # required
+ --save_dir {DIR_TO_SAVE_DATA} \   # required
+ --admission_only True \   # required
+```
 
-mimic_dir: _Directory that contains unpacked NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES.csv_
+_mimic_dir_: Directory that contains unpacked NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES.csv
 
-save_dir: _Any directory to save the data_
+_save_dir_: Any directory to save the data
 
-admission_only: _True=Create simulated Admission Notes, False=Keep complete Discharge Summaries_
+_admission_only_: True=Create simulated Admission Notes, False=Keep complete Discharge Summaries
 
-Apply these scripts accordingly for **Length-of-Stay** (los/los.py), **Diagnoses** (dia/dia.py), **Diagnoses + ICD+** (dia/dia_plus.py), **Procedures** (pro/pro.py) and **Procedures + ICD+** (pro/pro_plus.py) prediction Tasks.
+Apply these scripts accordingly for the other outcome tasks:
+
+**Length-of-Stay** (los/los.py), 
+
+**Diagnoses** (dia/dia.py), 
+
+**Diagnoses + ICD+** (dia/dia_plus.py),
+
+**Procedures** (pro/pro.py) and 
+
+**Procedures + ICD+** (pro/pro_plus.py)
 
 ## Train Outcome Prediction Tasks
 
