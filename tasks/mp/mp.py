@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 
 sys.path.append('.')
@@ -27,22 +28,46 @@ def mp_in_hospital_mimic(mimic_dir: str, save_dir: str, seed: int, admission_onl
     mimic_notes = mimic_utils.filter_notes(mimic_notes, mimic_admissions, admission_text_only=admission_only)
 
     # append HOSPITAL_EXPIRE_FLAG to notes
-    notes_expire_flag = pd.merge(mimic_notes, mimic_admissions[["HADM_ID", "HOSPITAL_EXPIRE_FLAG"]], how="left",
-                                 on="HADM_ID")
+    notes_with_expire_flag = pd.merge(mimic_notes, mimic_admissions[["HADM_ID", "HOSPITAL_EXPIRE_FLAG"]], how="left",
+                                      on="HADM_ID")
 
     # drop all rows without hospital expire flag
-    notes_expire_flag = notes_expire_flag.dropna(how='any', subset=['HOSPITAL_EXPIRE_FLAG'], axis=0)
+    notes_with_expire_flag = notes_with_expire_flag.dropna(how='any', subset=['HOSPITAL_EXPIRE_FLAG'], axis=0)
 
     # filter out written out death indications
-    notes_expire_flag['TEXT'] = notes_expire_flag['TEXT'].str.replace('patient died', '')
-    notes_expire_flag['TEXT'] = notes_expire_flag['TEXT'].str.replace('patient deceased', '')
-    notes_expire_flag['TEXT'] = notes_expire_flag['TEXT'].str.replace('\ndeceased\n', '\n')
+    notes_with_expire_flag = remove_mentions_of_patients_death(notes_with_expire_flag)
 
-    mimic_utils.save_mimic_split_patient_wise(notes_expire_flag,
+    mimic_utils.save_mimic_split_patient_wise(notes_with_expire_flag,
                                               label_column='HOSPITAL_EXPIRE_FLAG',
                                               save_dir=save_dir,
                                               task_name=task_name,
                                               seed=seed)
+
+
+def remove_mentions_of_patients_death(df: pd.DataFrame):
+    """
+    Some notes contain mentions of the patient's death such as 'patient deceased'. If these occur in the sections PHYSICAL EXAM and MEDICATION ON ADMISSION, we can simply remove the mentions, because the conditions are not further elaborated in these sections. However, if the mentions occur in any other section, such as CHIEF COMPLAINT, we want to remove the whole sample, because the patient's passing if usually closer described in the text and an outcome prediction does not make sense in these cases.
+    """
+
+    death_indication_in_special_sections = re.compile(
+        r"((?:PHYSICAL EXAM|MEDICATION ON ADMISSION):[^\n\n]*?)((?:patient|pt)?\s+(?:had\s|has\s)?(?:expired|died|passed away|deceased))",
+        flags=re.IGNORECASE)
+
+    death_indication_in_all_other_sections = re.compile(
+        r"(?:patient|pt)\s+(?:had\s|has\s)?(?:expired|died|passed away|deceased)", flags=re.IGNORECASE)
+
+    # first remove mentions in sections PHYSICAL EXAM and MEDICATION ON ADMISSION
+    df['TEXT'] = df['TEXT'].replace(death_indication_in_special_sections, r"\1", regex=True)
+
+    # if mentions can be found in any other section, remove whole sample
+    df = df[~df['TEXT'].str.contains(death_indication_in_all_other_sections)]
+
+    # remove other samples with obvious death indications
+    df = df[~df['TEXT'].str.contains("he expired", flags=re.IGNORECASE)]  # does also match 'she expired'
+    df = df[~df['TEXT'].str.contains("pronounced expired", flags=re.IGNORECASE)]
+    df = df[~df['TEXT'].str.contains("time of death", flags=re.IGNORECASE)]
+
+    return df
 
 
 if __name__ == "__main__":
