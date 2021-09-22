@@ -47,9 +47,9 @@ Apply these scripts accordingly for the other outcome tasks:
 
 ## Train Outcome Prediction Tasks
 
-1 - Build using Docker: [Dockerfile](https://github.com/DATEXIS/clinical-outcome-prediction/blob/master/experiments/Dockerfile)
+1 - Build using Docker: [Dockerfile](https://github.com/bvanaken/clinical-outcome-prediction/blob/master/experiments/Dockerfile)
 
-2 - Create Config File. See Example for Mortality Prediction: [MP Example Config](https://github.com/DATEXIS/clinical-outcome-prediction/blob/master/experiments/configs/example_config_mp.yaml)
+2 - Create Config File. See Example for Mortality Prediction: [MP Example Config](https://github.com/bvanaken/clinical-outcome-prediction/blob/master/experiments/configs/example_config_mp.yaml)
 
 3 - Run Training with Arguments
 ```
