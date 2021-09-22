@@ -55,7 +55,7 @@ Apply these scripts accordingly for the other outcome tasks:
 ```
 python doc_classification.py \
  --task_config {PATH_TO_TASK_CONFIG.yaml} \   # required
- --model_name {PATH_TO_MODEL_OR_TRANSFORMERS_MODEL_HUB_NAME} \   # required
+ --model_name_or_path {PATH_TO_MODEL_OR_TRANSFORMERS_MODEL_HUB_NAME} \   # required
  --cache_dir {CACHE_DIR} \   # required
 ```
 See [doc_classification.py](https://github.com/bvanaken/clinical-outcome-prediction/blob/master/experiments/doc_classification.py) for optional parameters.
