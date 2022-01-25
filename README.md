@@ -27,7 +27,7 @@ python tasks/mp/mp.py \
  --admission_only True \   # required
 ```
 
-_mimic_dir_: Directory that contains unpacked NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES.csv
+_mimic_dir_: Directory that contains unpacked NOTEEVENTS.csv, ADMISSIONS.csv, DIAGNOSES_ICD.csv and PROCEDURES_ICD.csv
 
 _save_dir_: Any directory to save the data
 
@@ -60,7 +60,7 @@ python doc_classification.py \
 ```
 See [doc_classification.py](https://github.com/bvanaken/clinical-outcome-prediction/blob/master/experiments/doc_classification.py) for optional parameters.
 
-(4) - Run Training with Hyperparameter Optimization
+4 - Run Training with Hyperparameter Optimization
 ```
 python hpo_doc_classification.py \
  # Same parameters as above plus the following:
