@@ -39,7 +39,7 @@ def save_predictions(results, save_dir, multilabel=False, dataset_name="test"):
             else:
                 predictions_log += str(sample_prob) + "\n"
 
-    with open(os.path.join(save_dir, f"predictions_{dataset_name}.txt"), "w") as prediction_file:
+    with open(os.path.join(save_dir, f"predictions_{dataset_name}.txt"), "w", encoding="utf-8") as prediction_file:
         prediction_file.write(predictions_log)
 
 
